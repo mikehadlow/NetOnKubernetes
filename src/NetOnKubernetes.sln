@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1058638-A938-4EC3-810C-1BCB56D697E6}"
+	ProjectSection(SolutionItems) = preProject
+		..\.dockerignore = ..\.dockerignore
+		..\.gitignore = ..\.gitignore
+		..\Dockerfile = ..\Dockerfile
+		..\greetings-service-deployment.yaml = ..\greetings-service-deployment.yaml
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsService", "GreetingsService\GreetingsService.csproj", "{76B3A9A2-080B-4345-B9C0-D32BAC4F3229}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76B3A9A2-080B-4345-B9C0-D32BAC4F3229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B3A9A2-080B-4345-B9C0-D32BAC4F3229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B3A9A2-080B-4345-B9C0-D32BAC4F3229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B3A9A2-080B-4345-B9C0-D32BAC4F3229}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDB63460-174D-4987-856A-44966CF852EC}
+	EndGlobalSection
+EndGlobal
