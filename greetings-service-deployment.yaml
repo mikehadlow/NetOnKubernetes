@@ -31,8 +31,8 @@ metadata:
     app: greetings-service
     version: v1
   annotations:
-    prometheus.io/port: 9216
-    prometheus.io/scrape: true
+    prometheus.io/port: '9216'
+    prometheus.io/scrape: 'true'
 spec:
   replicas: 2
   selector:
@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: greetings-service
-        image: greetings-service:0.0.3
+        image: greetings-service:0.0.5
         envFrom:
         - configMapRef:
             name: greetings-service

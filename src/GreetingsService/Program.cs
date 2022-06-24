@@ -47,8 +47,10 @@ public static class Program
         app.MapGet("/ready", () => hasStarted ? Results.Ok() : Results.StatusCode(500));
 
         // PostStart and PreStop event hooks.
-        app.MapGet("/PostStart", (ILogger<GreetingApp> logger) => logger.LogInformation("PostStart event"));
-        app.MapGet("/PreStop", (ILogger<GreetingApp> logger) => logger.LogInformation("PreStop event"));
+        app.MapGet("/postStart", (ILogger<GreetingApp> logger) 
+            => logger.LogInformation("PostStart event"));
+        app.MapGet("/preStop", (ILogger<GreetingApp> logger) 
+            => logger.LogInformation("PreStop event"));
 
         app.MapGet("/", (IConfiguration configuration) => 
         {
