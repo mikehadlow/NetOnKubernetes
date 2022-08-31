@@ -25,21 +25,16 @@ public static class Program
                 Indented = false 
             };
         });
-        builder.WebHost.ConfigureKestrel(options => 
-        {
-            options.ListenAnyIP(5432);
-        });
 
         var hasStarted = false;
         var app = builder.Build();
+        
+        // Listen to 5432
+        app.Urls.Add("http://*:5432");
 
         // configure the Prometheus metrics endpoint, should appear at /metrics
-        app.UseRouting();
-        app.UseEndpoints(endpoints => 
-        {
-            endpoints.MapMetrics();
-        });
-
+        app.MapMetrics();
+        
         // liveness probe, return HTTP status code 500 if you want the container to be restarted
         app.MapGet("/live", () => Results.Ok());
         // rediness probe, return 200 OK when the application is ready to respond to requests.
@@ -59,10 +54,12 @@ public static class Program
             return new Greeting(message);
         });
 
-        app.Run();
+        app.Start();
 
         // mark as true when complex startup logic has completed and the service is ready to take requests.
         hasStarted = true;
+        
+        app.WaitForShutdown();
     }
 }
 
